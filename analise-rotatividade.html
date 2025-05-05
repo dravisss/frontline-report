@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Visual da Rotatividade Sodexo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+            margin-bottom: 2rem;
+            position: relative;
+            height: 450px;
+        }
+        .chart-container-large { height: 500px; }
+        .legend-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+        .legend-color-box { width: 1rem; height: 1rem; margin-right: 0.5rem; border-radius: 0.125rem; display: inline-block; }
+        .color-custo-invol { background-color: #f87171; }
+        .color-custo-vol { background-color: #fb923c; }
+        .color-absenteismo { background-color: #60a5fa; }
+        .color-hora-extra { background-color: #c084fc; }
+        .color-rescisao { background-color: #a78bfa; }
+        .color-aso-adm { background-color: #facc15; }
+        .color-aso-dem { background-color: #fbbf24; }
+        .color-uniforme { background-color: #38bdf8; }
+        .color-gu-contr { background-color: #4ade80; }
+        .color-gu-trein { background-color: #2dd4bf; }
+        .color-gu-deslig { background-color: #94a3b8; }
+        @media (max-width: 900px) {
+            .chart-container, .chart-container-large { height: 340px; padding: 0.7rem; }
+            .legend-item { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body style="font-family: 'Inter', 'Segoe UI', Arial, sans-serif; background: var(--background);">
+    <header>
+        <nav style="margin-bottom: 1.5rem;">
+            <a href="index.html" style="color: var(--secondary); font-weight: 600; text-decoration: none; margin-right: 1.5rem;">Página Inicial</a>
+            <a href="analise-rotatividade.html" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Análise da Rotatividade</a>
+        </nav>
+        <h1 style="text-align:center; color: var(--primary); font-size:2rem; font-weight:700;">Análise de Rotatividade (Turnover) - Sodexo Frontline</h1>
+    </header>
+    <main style="max-width: 1000px; margin: 2rem auto;">
+        <div class="grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem;">
+            <div class="chart-container">
+                <h2>Custos Diretos Totais por Tipo (Empilhado - Milhões R$)</h2>
+                <canvas id="custosDiretosEmpilhadoChart"></canvas>
+                <div class="legend-container">
+                    <div class="legend-item"><div class="legend-color-box color-custo-invol"></div>Custo Involuntário</div>
+                    <div class="legend-item"><div class="legend-color-box color-custo-vol"></div>Custo Voluntário</div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <h2>Desligamentos por Tipo (Empilhado - Nº Pessoas)</h2>
+                <canvas id="desligamentosEmpilhadoChart"></canvas>
+                <div class="legend-container">
+                    <div class="legend-item"><div class="legend-color-box color-custo-invol"></div>Deslig. Involuntários</div>
+                    <div class="legend-item"><div class="legend-color-box color-custo-vol"></div>Deslig. Voluntários</div>
+                </div>
+            </div>
+            <div class="chart-container chart-container-large" style="grid-column: 1/3;">
+                <h2>Detalhamento Custos Diretos por Tipo e Componente (Milhões R$)</h2>
+                <canvas id="custosDiretosDetalheChart"></canvas>
+                <div class="legend-container flex-wrap text-xs mt-3">
+                    <div class="legend-item"><span class="legend-color-box color-rescisao"></span>Rescisão Folha</div>
+                    <div class="legend-item"><span class="legend-color-box color-aso-adm"></span>ASO Admiss.</div>
+                    <div class="legend-item"><span class="legend-color-box color-aso-dem"></span>ASO Demiss.</div>
+                    <div class="legend-item"><span class="legend-color-box color-uniforme"></span>Uniforme+EPI</div>
+                    <div class="legend-item"><span class="legend-color-box color-gu-contr"></span>Hora GU Contr.</div>
+                    <div class="legend-item"><span class="legend-color-box color-gu-trein"></span>Hora GU Trein.</div>
+                    <div class="legend-item"><span class="legend-color-box color-gu-deslig"></span>Hora GU Deslig.</div>
+                </div>
+            </div>
+            <div class="chart-container" style="grid-column: 1/3;">
+                <h2>Custos Indiretos (Empilhado - Milhões R$)</h2>
+                <canvas id="custosIndiretosChart"></canvas>
+                <div class="legend-container">
+                    <div class="legend-item"><div class="legend-color-box color-absenteismo"></div>Custo Faltas Justificadas</div>
+                    <div class="legend-item"><div class="legend-color-box color-hora-extra"></div>Custo Horas Extras</div>
+                </div>
+            </div>
+        </div>
+        <div class="kpi-section" style="margin-top:2.5rem;">
+            <h2 style="text-align:left;">Custos e Impactos Não Mensurados</h2>
+            <ul style="margin-left:1.2rem; color:var(--muted);">
+                <li>Desgaste da equipe e do GU (Gestor/Unidade).</li>
+                <li>Impacto na qualidade e no padrão do serviço ao cliente.</li>
+                <li>Sobrecarga de trabalho para os colaboradores remanescentes.</li>
+                <li>Prejuízo no engajamento e na retenção de bons colaboradores.</li>
+                <li>Risco de processos trabalhistas.</li>
+                <li>Problemas operacionais causados por colaboradores desmotivados que buscam a demissão.</li>
+                <li><em>Nota: Os dados de Custo Rescisão Folha para desligamentos involuntários não foram fornecidos explicitamente e foram assumidos como R$ 0 nos cálculos.</em></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sodexo. Proposta Estrutura Frontline.</p>
+    </footer>
+    <script src="analise-rotatividade.js"></script>
+</body>
+</html>

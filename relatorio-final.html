@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Final - Projeto Frontline Sodexo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .relatorio-section {
+            margin-bottom: 2.7rem;
+        }
+        .relatorio-section h2 {
+            margin-top: 2.2rem;
+        }
+        .relatorio-section h3 {
+            margin-top: 1.2rem;
+        }
+        .relatorio-img {
+            width: 100%;
+            max-width: 650px;
+            margin: 1.5rem auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px #00336611;
+        }
+        .relatorio-link {
+            color: var(--secondary);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .relatorio-quote, .relatorio-aside {
+            background: var(--aside-bg);
+            border-left: 5px solid var(--secondary);
+            color: var(--muted);
+            padding: 1rem 1.3rem;
+            border-radius: 7px;
+            margin: 1.3rem 0 2rem 0;
+            font-size: 1rem;
+        }
+        .relatorio-list {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .relatorio-list li {
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 700px) {
+            .relatorio-img { max-width: 98vw; }
+            main { padding: 0.5rem !important; }
+        }
+    </style>
+</head>
+<body style="font-family: 'Inter', 'Segoe UI', Arial, sans-serif; background: var(--background);">
+    <header>
+        <nav style="margin-bottom: 1.5rem;">
+            <a href="index.html" style="color: var(--secondary); font-weight: 600; text-decoration: none; margin-right: 1.5rem;">Página Inicial</a>
+            <a href="analise-rotatividade.html" style="color: var(--secondary); font-weight: 600; text-decoration: none; margin-right: 1.5rem;">Análise da Rotatividade</a>
+            <a href="relatorio-final.html" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Relatório Final</a>
+        </nav>
+        <h1 style="text-align:center; color: var(--primary); font-size:2rem; font-weight:700;">Relatório Final do Projeto Frontline</h1>
+    </header>
+    <main style="max-width: 900px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px #00336611;">
+        <section class="relatorio-section">
+            <h2>1. Sumário Executivo</h2>
+            <h3>1.1 O Desafio Crítico</h3>
+            <p>A Sodexo enfrenta um desafio estratégico persistente com níveis elevados de turnover no seu <em>frontline</em>. Este fenômeno gera custos significativos (recrutamento, treinamento, perda de produtividade, impacto na qualidade do serviço) e riscos operacionais.</p>
+            <h3>1.2 A Comunidade de Prática (CoP) de Agentes de Mudança</h3>
+            <p>Em 2024, lançamos a CoP como uma abordagem inovadora e inédita na organização, com apoio da liderança, para engajar colaboradores de diversas áreas no desenho de experimentos ("safe-to-fail") visando melhorar a experiência no <em>frontline</em> e, consequentemente, impactar o turnover.</p>
+            <p>Embora a CoP tenha demonstrado um engajamento inicial notável e gerado ideias relevantes, ela não foi suficiente para uma mudança significativa do objetivo primário de reduzir o turnover de forma sustentável.</p>
+            <p>Nesta jornada, produzimos achados tão importantes que revelam as <strong>barreiras estruturais críticas</strong> que impedem a implementação eficaz e a escalabilidade de melhorias no <em>frontline</em>:</p>
+            <ul class="relatorio-list">
+                <li><strong>Insustentabilidade do voluntarismo:</strong> a dependência de tempo livre e boa vontade, sem integração formal a metas e responsabilidades, mostrou-se ineficaz para um problema estratégico.</li>
+                <li><strong>Saturação operacional e desalinhamento:</strong> a sobrecarga das Gerentes de Unidade, somada a incentivos focados em métricas operacionais e contratos rígidos, cria um ambiente hostil à experimentação e à gestão proativa do clima.</li>
+                <li><strong>Ausência de um motor de implementação e escala:</strong> falta uma estrutura organizacional com recursos, mandato e capacidade para gerenciar o ciclo completo de mudança – da ideia à implementação assistida e à disseminação em larga escala por centenas ou milhares de unidades.</li>
+            </ul>
+            <h3>1.3 Um Investimento em Aprendizado</h3>
+            <p>Longe de ser um esforço em vão, a CoP proporcionou um <strong>aprendizado estratégico</strong>. Ela validou, com evidências práticas, <em>por que</em> as abordagens anteriores podem ter falhado e <em>o que</em> é necessário para ter sucesso no futuro.</p>
+            <p>Com base nessas conclusões, propomos a criação de uma <strong>Estrutura de Atendimento ao Frontline</strong> – uma estrutura organizacional dedicada (semelhante a um Centro de Serviços Compartilhados/Excelência), multifuncional e com recursos próprios, focada exclusivamente em entender, pilotar, implementar e escalar soluções para melhorar a experiência do colaborador e reduzir o turnover no <em>frontline</em>.</p>
+        </section>
+        <section class="relatorio-section">
+            <h2>2. Introdução</h2>
+            <h3>2.1. O Desafio Persistente do Turnover no Frontline</h3>
+            <p>A Sodexo enfrenta o desafio estratégico contínuo de um elevado e persistente turnover em suas equipes de <em>frontline</em>.</p>
+            <p>Essa alta rotatividade transcende a esfera de RH, impactando negativamente toda a organização:</p>
+            <ul class="relatorio-list">
+                <li>gera custos financeiros diretos e indiretos substanciais (recrutamento, treinamento, perda de produtividade);</li>
+                <li>compromete a consistência e a qualidade dos serviços entregues aos nossos clientes;</li>
+                <li>sobrecarrega severamente a gestão das unidades com um ciclo constante de contratação e treinamento;</li>
+                <li>eleva riscos operacionais importantes; e</li>
+                <li>prejudica o moral das equipes e a imagem da Sodexo como marca empregadora atrativa.</li>
+            </ul>
+            <p>Este cenário desafiador não é recente, mas sim um problema complexo e persistente, influenciado por múltiplos fatores que vão desde condições de trabalho, política nacional e remuneração até liderança e reconhecimento, e que não foi revertido decisivamente pelas abordagens convencionais.</p>
+            <p>Compreender e endereçar eficazmente os <strong>fatores subjacentes</strong> a este turnover tornou-se, portanto, um imperativo estratégico para a saúde financeira, a eficiência operacional e a sustentabilidade do negócio. É neste contexto de urgência que se justifica a exploração de novas abordagens, como a Comunidade de Prática, cujas lições e desdobramentos são <strong>fundamentais</strong> para definirmos os caminhos futuros.</p>
+            <h4>2.1.2 -  De uma perspectiva linear para uma visão sistêmica do Turnover</h4>
+            <p>Um dos ganhos fundamentais proporcionados pela iniciativa da Comunidade de Prática foi a <strong>evolução na forma como a organização compreende o próprio desafio do turnover</strong>. Inicialmente, prevalecia uma tendência a abordagens mais lineares e quantitativas, focadas em identificar uma suposta "causa raiz" única ou principal para a alta rotatividade.</p>
+            <p>A metodologia adotada pela CoP, privilegiando a <strong>coleta de "dados quentes" e qualitativos</strong> através de entrevistas diretas com os colaboradores no <em>frontline</em>, observação de campo e a própria dinâmica de tentar implementar microexperimentos "seguros para falhar", catalisou uma <strong>mudança para uma perspectiva sistêmica</strong>.</p>
+            <p>O contato próximo com a realidade vivida nas unidades permitiu compreender que o turnover elevado não era <em>o</em> problema em si, mas sim um dos <strong>sintomas mais evidentes de um ecossistema de trabalho no <em>frontline</em> com múltiplas fragilidades e condições frequentemente inadequadas</strong>. A narrativa deixou de ser apenas sobre "por que as pessoas saem" para ser sobre "como é a realidade de quem fica e trabalha aqui".</p>
+            <!-- Imagem ilustrativa omitida, pode ser inserida se necessário -->
+            <div class="relatorio-aside">
+                <strong>💡 Esses desafios foram apresentados em detalhes na pesquisa realizada na unidade de Usiminas em Ipatinga - MG.</strong> Veja <a class="relatorio-link" href="https://mapa-sodexo.vercel.app/" target="_blank">aqui</a> o relatório.
+            </div>
+        </section>
+        <section class="relatorio-section">
+            <h2>2.2. Comunidade de Prática (CoP) de Agentes de Mudança</h2>
+            <p>Diante do desafio estratégico persistente do alto turnover no <em>frontline</em>, detalhado na seção anterior, e reconhecendo a necessidade de explorar novas soluções para além das abordagens convencionais, a Sodexo lançou em 2024 a iniciativa de uma Comunidade de Prática (CoP) de Agentes de Mudança.</p>
+            <p>Esta iniciativa foi concebida como uma resposta proativa, buscando não apenas analisar o problema, mas principalmente <strong>engajar ativamente os próprios colaboradores</strong> na construção de um ambiente de trabalho melhor nas operações de linha de frente.</p>
+            <p>O que diferenciou fundamentalmente a CoP foi sua abordagem inovadora e inédita dentro da cultura organizacional da Sodexo. Em vez de soluções desenhadas e implementadas exclusivamente pela gestão (<em>top-down</em>), a CoP propôs um modelo de <strong>colaboração e experimentação</strong>.</p>
+            <p>O objetivo central era identificar, através da inteligência coletiva dos participantes, oportunidades de melhoria tangíveis no dia a dia do <em>frontline</em> e, a partir delas, desenvolver e testar <strong>experimentos 'seguros para falhar' ('safe-to-fail')</strong>.</p>
+            <p>Estas seriam intervenções pontuais, de baixo risco e custo, desenhadas para validar rapidamente hipóteses sobre como impactar positivamente fatores como o reconhecimento, a dinâmica de trabalho, a comunicação ou o bem-estar dos colaboradores, visando, em última instância, a redução da rotatividade.</p>
+            <p>A metodologia adotada baseou-se no <strong>engajamento voluntário</strong> de um grupo diversificado de profissionais. A CoP reuniu membros de diferentes áreas corporativas (como Recursos Humanos, Gestão da Mudança, Gestão de Projetos, Jurídico e Lideranças do Frontline) e, de forma muito relevante, incluiu <strong>profissionais com experiência e atuação direta junto ao <em>frontline</em></strong>, como os Business Partners (BPs) que dão suporte às operações.</p>
+            <p>Esta composição heterogênea foi intencional, buscando combinar o conhecimento dos processos corporativos com a vivência prática da realidade das unidades.</p>
+            <p>Os participantes trabalhavam colaborativamente em ciclos definidos, dedicando parte do seu tempo à ideação, planejamento e tentativa de implementação desses experimentos.</p>
+            <p>É importante ressaltar que esta iniciativa, embora baseada no voluntarismo dos seus membros, contou com a <strong>ciência e o apoio da alta liderança</strong> da Sodexo desde a sua concepção.</p>
+            <p>Foi compreendida como uma <strong>aposta estratégica</strong> na capacidade de inovação interna e no potencial do engajamento dos colaboradores para encontrar caminhos alternativos e eficazes para lidar com um dos desafios mais significativos e persistentes da companhia.</p>
+            <p>A CoP representava, assim, uma tentativa organizada de fomentar a mudança a partir de dentro, com base na colaboração e na experimentação ágil.</p>
+        </section>
+        <section class="relatorio-section">
+            <h2>3. CoP: Engajamento, potencial e desafios</h2>
+            <h3>3.1. Mobilização e engajamento voluntário sem precedentes</h3>
+            <p>A fase inicial da Comunidade de Prática demonstrou uma capacidade notável de mobilização interna. Cada um dos três ciclos da iniciativa atraiu um número expressivo de participantes, começando consistentemente com cerca de <strong>50 a 60 colaboradores voluntários</strong>. Este volume de adesão inicial foi um indicador claro do interesse e da relevância percebida do tema do <em>frontline</em> dentro da organização.</p>
+            <p>A composição desses grupos iniciais destacou-se pela diversidade, reunindo profissionais de áreas corporativas centrais (como RH, Gestão de Mudanças, PMO) e <strong>Business Partners (BPs) e outros colaboradores com vivência direta nas operações de <em>frontline</em></strong>. Essa participação expressiva e voluntária, vinda de múltiplos níveis e áreas, sinalizou uma disposição interna importante para dedicar tempo e esforço na busca por soluções, mesmo fora das responsabilidades formais de cada um.</p>
+            <h3>3.2. Geração de ideias e potencial de inovação latente</h3>
+            <p>A colaboração nos grupos da CoP resultou na <strong>geração de um portfólio de mais de 15 ideias e propostas concretas</strong> para experimentos no <em>frontline</em>. Essas iniciativas visavam testar hipóteses sobre como melhorar aspectos específicos da rotina e do ambiente de trabalho.</p>
+            <p>Esses exemplos concretos demonstram que a CoP possuía, de fato, <strong>potencial para identificar pontos de dor e gerar soluções criativas e pertinentes</strong> aos desafios do <em>frontline</em>. A receptividade variada e os resultados limitados dos testes iniciais, contudo, já começavam a indicar a complexidade envolvida na implementação prática e a influência de fatores contextuais mais amplos, que seriam analisados posteriormente.</p>
+            <p><a class="relatorio-link" href="https://www.notion.so/Relat-rio-Final-Sodexo-Frontline-1c768f4b7d0d8051b70cc85309133a89?pvs=21" target="_blank"><strong>Veja todos os experimentos na sessão de anexos</strong></a></p>
+            <h3>3.3. Primeiros sinais de alerta e complexidade</h3>
+            <p>Paralelamente ao potencial de inovação, a execução da CoP começou a revelar <strong>desafios e sinais de alerta importantes</strong> já nas fases iniciais.</p>
+            <p>A receptividade variada aos experimentos e o feedback do <em>frontline</em> sobre necessidades básicas expuseram a complexidade do contexto operacional:</p>
+            <ul class="relatorio-list">
+                <li>A dependência da implementação nas Gerentes de Unidade revelou limitações de capacidade e reações diversas;</li>
+                <li>a significativa evasão de membros da própria CoP (redução de 50-60 para cerca de 15-20 participantes ativos) levantou dúvidas sobre a sustentabilidade do modelo voluntário.</li>
+            </ul>
+            <p>Esses indicadores combinados sugeriram que os obstáculos observados eram sintomas de questões estruturais mais significativas, as quais serão analisadas em detalhe na seção seguinte.</p>
+        </section>
+        <section class="relatorio-section">
+            <h2>4. Análise Crítica: as barreiras estruturais expostas pela CoP</h2>
+            <h3>a) Insustentabilidade do Modelo Voluntário e Falta de Priorização Formal</h3>
+            <p>A primeira barreira estrutural reside na <strong>insustentabilidade do modelo de participação puramente voluntário</strong> para endereçar um desafio estratégico como o turnover. A expressiva evasão de membros da CoP (de 60 para cerca de 20) evidenciou que, sem alocação formal de tempo, integração a metas individuais ou reconhecimento estruturado, a boa vontade inicial se esgota diante das demandas regulares do trabalho. Essa dependência do "tempo livre" sinaliza uma baixa priorização organizacional na prática e torna o esforço inconsistente e incapaz de gerar tração a longo prazo para iniciativas complexas.</p>
+            <!-- Imagem ilustrativa omitida, pode ser inserida se necessário -->
+            <div class="relatorio-aside">
+                Quanto menos priorização formal a CoP recebe, menor é o tempo disponível dos participantes. Sem tempo disponível, o sucesso dos experimentos se torna impossível, o que reduz a percepção de valor da CoP na Sodexo. Isso reforça a baixa priorização formal da CoP de forma geral.
+            </div>
+            <ul class="relatorio-list">
+                <li><em>Evidências:</em>
+                    <ul>
+                        <li>Queda na participação (60 -> 20 pessoas ativas).</li>
+                        <li>Relatos dos membros sobre a impossibilidade de conciliar a CoP com suas responsabilidades formais ("feito no tempo livre").</li>
+                        <li>A sobrecarga como fator impeditivo para assumir novas responsabilidades (acompanhar experimentos).</li>
+                        <li>Ausência de mecanismos formais de reconhecimento, alocação de tempo ou vínculo com metas individuais/departamentais.</li>
+                    </ul>
+                </li>
+                <li><em>Análise e Implicações:</em>
+                    <ul>
+                        <li>A boa vontade e o voluntarismo são insuficientes para sustentar uma iniciativa de mudança complexa deste calibre e de longo prazo.</li>
+                        <li>Revela uma <strong>falta de priorização estrutural</strong>: o problema do turnover é reconhecido, mas a solução via CoP não foi integrada formalmente aos processos e responsabilidades da organização.</li>
+                        <li>As iniciativas estratégicas exigem <strong>recursos dedicados e responsabilidade formalizada</strong>, não podem depender apenas de esforços extraoficiais.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>b) Saturação Operacional, Incentivos Desalinhados e Rigidez Contratual no Frontline</h3>
+            <p>A segunda barreira é a <strong>dura realidade operacional do frontline e a saturação de sua gestão direta</strong>.</p>
+            <p>As Gerentes de Unidade, submetidas a intensa pressão por resultados (metas de serviço, custos, risco de penalidades) e limitadas por contratos rígidos, frequentemente não possuem capacidade operacional ou foco disponível para absorver, implementar e acompanhar adequadamente novos experimentos, especialmente aqueles percebidos como adicionais às suas métricas imediatas.</p>
+            <!-- Imagem ilustrativa omitida, pode ser inserida se necessário -->
+            <div class="relatorio-aside">
+                Esse ambiente de alta pressão, por vezes somado a necessidades básicas não atendidas das equipes, cria um contexto pouco receptivo ou capacitado para a implementação eficaz de mudanças que dependam crucialmente da liderança local já sobrecarregada.
+            </div>
+            <ul class="relatorio-list">
+                <li><em>Evidências:</em>
+                    <ul>
+                        <li>A rigidez dos contratos com clientes que limitam a flexibilidade operacional e a experimentação.</li>
+                        <li>As dinâmicas de favoritismo mencionadas e como dificultam a implementação imparcial.</li>
+                        <li>O feedback dos colaboradores do <em>frontline</em> sobre suas necessidades básicas não atendidas (sobrecarga, condições financeiras, exaustão), que diminuem o impacto percebido de alguns experimentos.</li>
+                        <li>Pressão sobre as Gerentes de Unidade: metas de serviço, risco de multas/penalidades (impacto em PLR).</li>
+                    </ul>
+                </li>
+                <li><em>Análise e Implicações:</em>
+                    <ul>
+                        <li>O <strong>ecossistema operacional existente no <em>frontline</em> é hostil à inovação focada em pessoas</strong> que não esteja diretamente ligada às métricas de desempenho atuais.</li>
+                        <li>As Gerentes de Unidade estão <strong>operacionalmente saturadas e seus incentivos não estão alinhados</strong> com a dedicação de tempo e energia para experimentação em gestão de pessoas. Delegar a elas a implementação de experimentos é inviável.</li>
+                        <li>A estrutura atual foca em <strong>executar o contrato</strong>, com pouca flexibilidade para adaptações ou melhorias que não gerem eficiência imediata ou receita.</li>
+                        <li>Problemas estruturais básicos precisam ser endereçados antes que certos tipos de experimentos possam ter efeito significativo.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>c) Ausência de um motor dedicado para implementação, acompanhamento e escala</h3>
+            <p>A terceira barreira estrutural identificada é a <strong>ausência de um mecanismo organizacional dedicado à implementação consistente e, fundamentalmente, à escala das soluções no frontline</strong>.</p>
+            <p>Mesmo que um experimento se mostrasse eficaz em unidades piloto, a experiência da CoP demonstrou que a Sodexo carece de uma estrutura, processos e recursos designados para levar essa solução de forma gerenciada e padronizada para centenas ou milhares de outras unidades. A falta de um time ou função com mandato claro para coordenar o rollout, superar barreiras burocráticas, alocar recursos e monitorar a implementação em larga escala significa que qualquer sucesso local tende a permanecer isolado, sem gerar o impacto sistêmico necessário no turnover organizacional.</p>
+            <!-- Imagem ilustrativa omitida, pode ser inserida se necessário -->
+            <div class="relatorio-aside">
+                O Ponto Crítico da Escalabilidade: Mesmo experimentos sejam validados em 2-3 unidades, descobrimos <strong>a impossibilidade de uma estrutura ou processo atual na Sodexo capaz de escalar essa solução</strong> para 200, muito menos 2000 unidades. Seria impossível coordenar, treinar, monitorar e sustentar essa expansão com voluntários ou sobrecarregando ainda mais as Gerentes de Unidade.
+            </div>
+            <ul class="relatorio-list">
+                <li><em>Evidências:</em>
+                    <ul>
+                        <li>Processo burocrático e a necessidade de "vender" internamente cada experimento para obter recursos mínimos.</li>
+                        <li>A falta crítica de <strong>acompanhamento <em>on-site</em></strong> dedicado para garantir a correta implementação, coletar feedback e ajustar os experimentos.</li>
+                        <li>O impacto isolado e limitado de experimentos pontuais, mesmo os bem-sucedidos.</li>
+                        <li>A falta de capacidade de escala torna qualquer sucesso piloto irrelevante para o desafio global do turnover na organização.</li>
+                    </ul>
+                </li>
+                <li><em>Análise e Implicações:</em>
+                    <ul>
+                        <li>A Sodexo carece de uma <strong>estrutura organizacional</strong> com o mandato, os recursos e a metodologia para <strong>gerenciar o ciclo de vida completo da inovação no <em>frontline</em></strong>.</li>
+                        <li>A responsabilidade fragmentada entre RH (foco em políticas, contratos) e Operações (foco em eficiência, execução) deixa uma lacuna crítica na <strong>implementação e disseminação de melhorias focadas na experiência do colaborador</strong>.</li>
+                        <li><strong>A falta de capacidade de escala torna qualquer sucesso piloto irrelevante</strong> para o desafio global do turnover na organização.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="relatorio-section">
+            <h2>5. Impacto</h2>
+            <p>O objetivo final primário de redução do turnover não foi alcançado <em>por esta via</em>. Contudo, o valor da iniciativa reside em outro lugar: no <strong>aprendizado e no diagnóstico prático</strong> do desafio do turnover com uma iniciativa inédita na organização que movimentou diversas áreas e centenas de pessoas.</p>
+            <!-- Imagem ilustrativa omitida, pode ser inserida se necessário -->
+            <ul class="relatorio-list">
+                <li><strong>Diagnóstico Prático</strong>
+                    <ul>
+                        <li>O método utilizado de descoberta e implementação das mudanças organizacionais, não apenas <em>supôs</em>, mas <strong>demonstrou na prática</strong> quais são as reais barreiras estruturais que impedem alcançarmos nossas ambições. As dificuldades enfrentadas pelos voluntários e gerentes não foram falhas individuais, mas <strong>sintomas de problemas sistêmicos da Sodexo</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Percepção e aceitação da complexidade</strong>
+                    <ul>
+                        <li>O método também permitiu que os colaboradores e as lideranças da Sodexo adquirissem uma visão sistêmica do desafio, evitando uma simplificação do problema e apontamento de causas-raiz precoces (<a class="relatorio-link" href="https://www.notion.so/Relat-rio-Final-Sodexo-Frontline-1c768f4b7d0d8051b70cc85309133a89?pvs=21" target="_blank">veja depoimentos aqui</a>). Em posse deste repertório, foi possível adquirir enorme capital político e colaboração multisetorial.</li>
+                    </ul>
+                </li>
+                <li><strong>Integração de método ágil</strong>
+                    <ul>
+                        <li>Com este capital político formado, conseguimos conquistar diversos setores e integrar um novo método de transformação organizacional junto ao time de gestão de projetos da Sodexo.  Foram mais de 20 apresentações do projeto feitas em diversos níveis e setores da organização, sempre com uma recepção calorosa dos participantes.</li>
+                    </ul>
+                </li>
+                <li><strong>Evidências Concretas para ação futura</strong>
+                    <ul>
+                        <li>A partir dos aprendizados obtidos, a Sodexo possui <strong>dados e evidências concretas</strong> sobre o que impede o progresso esperado para o frontline (insustentabilidade do voluntarismo, saturação operacional, falta de motor de escala). Este conhecimento é essencial para <strong>evitar a repetição de erros</strong> e direcionar os investimentos futuros para onde eles terão impacto.</li>
+                    </ul>
+                </li>
+                <li><strong>Validação dos múltiplos experimentos simultâneos</strong>
+                    <ul>
+                        <li>O Programa Frontline foi valioso ao gerar aprendiados sobre a execução de múltiplos experimentos simultâneos. Apesar de uma operação muito diversificada, concluímos que existem convergências suficientes sobre o desafio de Turnover em cada contexto, que nos permitiria escalar com segurança os experimentos com um nível factível de adaptação.</li>
+                        <li>Se vencidos os desafios listados neste sumário, acreditamos que este método de transformação se apresentou como adequado para o contexto e complexidade presente na organização.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><a class="relatorio-link" href="https://www.notion.so/Relat-rio-Final-Sodexo-Frontline-1c768f4b7d0d8051b70cc85309133a89?pvs=21" target="_blank"><strong>Veja em detalhes o avanço de cada experimento</strong></a></p>
+        </section>
+        <section class="relatorio-section">
+            <h2>6. Alternativa: uma estrutura de atendimento dedicada e multifuncional ao frontline</h2>
+            <ul class="relatorio-list">
+                <li><strong>Visão:</strong> Criar uma entidade organizacional focada 100% no <em>frontline</em> – a estrutura de atendimento dedicada e multifuncional ao frontline</li>
+                <li><strong>Estrutura Proposta:</strong> Uma equipe permanente, multifuncional (com expertise em RH, Operações, Gestão de Projetos, Análise de Dados, Experiência do Colaborador), com liderança própria, orçamento e autonomia para agir dentro e fora das unidades.</li>
+                <li><strong>Mandato e Responsabilidades Claras:</strong>
+                    <ul>
+                        <li>Diagnosticar continuamente as causas do turnover e os pontos de dor no <em>frontline</em> (usando pesquisas, dados, feedback direto).</li>
+                        <li>Desenvolver, pilotar e medir o impacto de intervenções e experimentos.</li>
+                        <li>Gerenciar ativamente a implementação e a escala das soluções bem-sucedidas em toda a rede.</li>
+                        <li>Atuar como facilitadora e provedora de suporte para as Gerentes de Unidade na implementação de mudanças (ferramentas, treinamento, acompanhamento), aliviando sua carga.</li>
+                        <li>Ser um ponto focal para a voz do colaborador do <em>frontline</em>.</li>
+                        <li>Monitorar KPIs chave (turnover, engajamento, clima, etc.) e ser responsável por sua melhoria.</li>
+                        <li>Atender as Unidades de forma presencial ou coordenar o acompanhamento <strong>on-site</strong> dos experimentos.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>6.2. Benefícios Estratégicos da Estrutura</h3>
+            <p>Com base na análise das barreiras e na compreensão sistêmica do desafio, propomos a criação de uma <strong>Estrutura de Atendimento ao Frontline</strong> – uma mudança estrutural para prover capacidade dedicada.</p>
+            <p>Sua <strong>estrutura</strong> seria uma <strong>equipe permanente e multifuncional</strong> (com expertises de RH, Operações, Projetos, Dados). Essencialmente, <strong>esta estrutura asseguraria profissionais com dedicação formal e integral ao <em>frontline</em>, tendo esta como sua responsabilidade primária, com tempo protegido e metas definidas.</strong> Isso supera diretamente a insustentabilidade do modelo voluntário da CoP, baseado em atuação no 'tempo livre'. A estrutura requereria orçamento e autonomia para operar com agilidade.</p>
+            <p>O <strong>mandato claro</strong> da estrutura cobriria o ciclo completo de melhoria: análise de dados e feedback, desenho e pilotagem de intervenções, e crucialmente, a <strong>implementação gerenciada e a escala</strong> das soluções validadas em toda a rede.</p>
+            <p>Seu <strong>modo de operação</strong> seria de <strong>parceria</strong> com RH e Operações, mas com foco próprio. Atuaria como <strong>facilitadora e suporte</strong> às Gerentes de Unidade (resolvendo a Barreira 2), coletaria a voz do colaborador e seria o motor para experimentação e disseminação de práticas eficazes.</p>
+        </section>
+        <section class="relatorio-section">
+            <h2>7. Conclusão</h2>
+            <ul class="relatorio-list">
+                <li>A CoP foi um passo importante que, ao encontrar barreiras, revelou a necessidade de uma solução estrutural.</li>
+                <li>As barreiras identificadas (voluntarismo insustentável, saturação operacional, falta de motor de escala) são os verdadeiros alvos a serem atacados.</li>
+                <li>A Estrutura de Atendimento ao Frontline não é 'mais uma iniciativa', mas uma <strong>mudança estrutural necessária</strong> para capacitar a Sodexo a vencer o desafio do turnover.</li>
+                <li>Cada dia com alto turnover representa custos e riscos que podem ser mitigados com a abordagem correta. Com a estrutura adequada, a energia e as ideias que existem na organização podem ser canalizadas para um impacto real e positivo.</li>
+            </ul>
+        </section>
+        <section class="relatorio-section">
+            <h2>8. Próximos Passos Recomendados</h2>
+            <ul class="relatorio-list">
+                <li><strong>Formação de Grupo de Trabalho (GT):</strong> Criação de um GT multifuncional (áreas: RH, Operações, Finanças, TI, representante da CoP/BP) com o mandato de:
+                    <ul>
+                        <li>Desenvolver o desenho organizacional detalhado da Estrutura (estrutura, governança, processos).</li>
+                        <li>Definir o escopo preciso de atuação e os limites com outras áreas.</li>
+                        <li>Estimar os recursos necessários (pessoas, orçamento)</li>
+                        <li>Propor indicadores de sucesso e objetivos iniciais.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sodexo. Proposta Estrutura Frontline.</p>
+    </footer>
+</body>
+</html>
