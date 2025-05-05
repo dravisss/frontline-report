@@ -94,6 +94,11 @@ main {
 }
 
 section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     margin-bottom: 2.5rem;
 }
 
@@ -191,6 +196,43 @@ th {
     font-weight: 600;
 }
 
+/* === SUB-NAV VERTICAL REMOVIDA === */
+
+/* Override horizontal sub-nav to hide */
+.sub-nav {
+    display: none;
+}
+
+/* Heroicon inline SVG styling */
+.icon {
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+/* Smooth scrolling for anchor navigation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Back-to-top button styling */
+#backToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
 @media (max-width: 600px) {
     main {
         padding: 1rem 0.5rem 2rem 0.5rem;
@@ -210,5 +252,339 @@ th {
     table, th, td {
         font-size: 0.95rem;
         padding: 0.5rem 0.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #backToTop {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Novo visual para bloco de custos: ocupa toda a largura, visual moderno, sem card tradicional */
+.custo-card {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    max-width: 100%;
+    border-left: none;
+    display: block;
+}
+.custo-lista.uma-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    background: #f8f9fa;
+    border-radius: 10px 10px 10px 10px;
+    border-bottom: 2px solid #f0e6c0;
+    padding: 2.1rem 2.5rem 0.5rem 2.5rem;
+}
+.custo-item {
+    display: flex;
+    align-items: baseline;
+    font-size: 1.13rem;
+    padding: 0.3rem 0;
+    border: none;
+    background: none;
+}
+.custo-label {
+    color: var(--accent);
+    font-weight: 700;
+    min-width: 170px;
+    margin-right: 0.55em;
+    letter-spacing: 0.01em;
+}
+.custo-value {
+    color: var(--primary);
+    font-weight: 500;
+    word-break: break-word;
+}
+.custo-total {
+    margin-top: 1.2rem;
+    background: #fffbe7;
+    border-radius: 0 0 10px 10px;
+    padding: 1.3rem 2.5rem 1.4rem 2.5rem;
+    text-align: right;
+    border-top: 2px solid #f0e6c0;
+    box-shadow: none;
+}
+.custo-total-label {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1.09rem;
+    margin-right: 0.5em;
+}
+.custo-total-value {
+    color: #0072c6;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+}
+.logistica-item .custo-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1em;
+}
+.logistica-inline {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3em;
+    flex-wrap: wrap;
+}
+.logistica-formula {
+    font-size: 0.83em !important;
+    color: #666;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+.logistica-resultado {
+    color: #0072c6;
+    font-size: 1em;
+    font-weight: 700;
+    margin-left: 0.6em;
+}
+@media (max-width: 600px) {
+    .custo-lista.uma-coluna {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+        padding-top: 1.2rem;
+    }
+    .logistica-formula {
+        font-size: 0.95em !important;
+    }
+}
+
+/* ROI Section Styling */
+.roi-formula-box {
+    display: flex;
+    align-items: center;
+    background: #e3f2fd;
+    border-radius: 12px;
+    padding: 1.1rem 1.6rem;
+    margin: 1.3rem 0 2.1rem 0;
+    font-size: 1.16rem;
+    box-shadow: 0 1px 8px #1976d222;
+    gap: 1.1rem;
+}
+.roi-formula-icon {
+    font-size: 2.3rem;
+    color: #1976d2;
+    font-weight: bold;
+    margin-right: 0.6rem;
+}
+.roi-formula-main {
+    font-size: 1.14em;
+    color: #003366;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.roi-blocos {
+    display: flex;
+    gap: 2.5rem;
+    margin: 2.5rem 0 1.5rem 0;
+    justify-content: center;
+}
+.roi-bloco {
+    flex: 1;
+    min-width: 320px;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.roi-bloco h3 {
+    font-size: 1.13rem;
+    color: #b48b00;
+    font-weight: 700;
+    margin-bottom: 0.6em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.roi-bloco-icon {
+    font-size: 1.3em;
+    margin-right: 0.2em;
+}
+.roi-table {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(23,125,220,0.05);
+    background: #fff;
+}
+.roi-table th {
+    background: #fffbe7;
+    color: #b48b00;
+    font-weight: 700;
+    padding: 0.45em 0.7em;
+    border-radius: 7px 7px 0 0;
+}
+.roi-table td {
+    background: #fff;
+    color: #003366;
+    font-weight: 600;
+    padding: 0.45em 0.7em;
+    text-align: center;
+}
+.roi-table-desc {
+    font-size: 0.95em;
+    color: #888;
+    font-weight: 400;
+}
+.roi-table-bullets ul {
+    margin: 0.5em 0 0 0;
+    padding-left: 1.2em;
+    font-size: 0.96em;
+    color: #555;
+}
+
+.roi-invest-benef {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.roi-invest-card, .roi-benef-card {
+    width: 100%;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 12px 0 rgba(23,125,220,0.05);
+    padding: 1.1rem 1.3rem 1.1rem 1.3rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.roi-invest-label, .roi-benef-label {
+    font-size: 0.98em;
+    color: #b48b00;
+    font-weight: 600;
+    margin-bottom: 0.1em;
+}
+.roi-invest-value, .roi-benef-value {
+    font-size: 1.23em;
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 0.1em;
+}
+.roi-invest-note, .roi-benef-note {
+    font-size: 0.92em;
+    color: #888;
+    font-style: italic;
+}
+
+.roi-breakeven-badge {
+    margin-top: 1.1em;
+    background: #e3f2fd;
+    color: #1976d2;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.06em;
+    padding: 0.7em 1.2em;
+    display: inline-block;
+    box-shadow: 0 1px 6px #1976d222;
+}
+.roi-breakeven-value {
+    color: #0072c6;
+    font-size: 1.12em;
+    font-weight: 800;
+}
+
+.roi-breakeven-center {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.roi-breakeven-exp {
+    display: block;
+    color: #888;
+    font-size: 0.98em;
+    font-weight: 400;
+    margin-top: 0.3em;
+}
+
+.roi-aside-info {
+    background: #fffbe7;
+    color: #b48b00;
+    border-radius: 8px;
+    padding: 1.1em 1.3em;
+    margin: 1.6em 0 0.7em 0;
+    font-size: 1.01em;
+    font-style: italic;
+    box-shadow: 0 1px 6px #f9a82522;
+}
+.roi-footnote {
+    font-size: 0.95em;
+    color: #888;
+    margin-top: 0.4em;
+    margin-bottom: 0;
+}
+
+.formula-menor {
+    font-size: 87% !important;
+}
+
+.roi-cenarios-grafico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem 0 1.5rem 0;
+}
+#roiChart {
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(23,125,220,0.05);
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    .roi-blocos {
+        flex-direction: column;
+        gap: 1.4rem;
+    }
+    .roi-bloco {
+        min-width: 0;
+        padding: 1.2rem 0.6rem 1rem 0.6rem;
+    }
+    .roi-invest-benef {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+}
+@media (max-width: 600px) {
+    .roi-formula-box {
+        padding: 0.7rem 0.6rem;
+        font-size: 1em;
+    }
+    .roi-bloco {
+        padding: 0.8rem 0.3rem 0.5rem 0.3rem;
+    }
+    .roi-invest-card, .roi-benef-card {
+        padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+        min-width: 0;
+    }
+    .roi-breakeven-badge {
+        padding: 0.5em 0.5em;
+        font-size: 0.98em;
+    }
+    .roi-aside-info {
+        padding: 0.7em 0.7em;
+        font-size: 0.97em;
     }
 }
