@@ -5,9 +5,9 @@ const parseCurrency = (value) => {
 };
 const parseInteger = (value) => {
     if (typeof value !== 'string') return value;
-    return parseInt(value.replace(/\./g, '').replace(',', '.'), 10) || 0;
+return parseInt(value.replace(/\./g, '').replace(',', '.'), 10) || 0;
 };
-const anosFiscais = ['AF23', 'AF24', 'AF25 (YTD)'];
+const anosFiscais = ['FY23', 'FY24', 'FY25 (YTD)'];
 const millions = 1000000;
 // --- NOVOS DADOS ---
 const desligamentosInvoluntarios = [parseInteger("7.490,00"), parseInteger("5.648,00"), parseInteger("3.262,00")];
