@@ -178,18 +178,56 @@ footer {
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1.7rem;
-    background: #f8f9fc;
-    border-radius: 8px;
-    overflow: hidden;
+  width: 100% !important;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border-collapse: collapse;
+  background: none;
 }
+
+.chart-container table, .chart-container .roi-table, .chart-container .roi-table th, .chart-container .roi-table td, .chart-container th, .chart-container td {
+  width: auto;
+  min-width: 0;
+}
+
+.chart-container table {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0;
+  display: table;
+  table-layout: fixed;
+  background: #f8f9fc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #00336611;
+}
+
+.chart-container th, .chart-container td {
+  width: auto;
+  min-width: 0;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid #dde2ec;
+}
+
+@media (max-width: 700px) {
+  .chart-container table {
+    width: 100% !important;
+    min-width: 340px;
+    display: block;
+    overflow-x: auto;
+    table-layout: auto;
+  }
+}
+
 th, td {
-    border: 1px solid #dde2ec;
-    padding: 0.7rem 1rem;
-    text-align: center;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid #dde2ec;
 }
+
 th {
     background: var(--secondary);
     color: #fff;
@@ -263,6 +301,20 @@ html {
     }
 }
 
+@media (max-width: 700px) {
+  table, .roi-table {
+    width: 100% !important;
+    max-width: 100vw;
+    display: block;
+    overflow-x: auto;
+  }
+  th, td {
+    min-width: 90px;
+    font-size: 0.93rem;
+    padding: 0.5rem 0.3rem;
+  }
+}
+
 /* Novo visual para bloco de custos: ocupa toda a largura, visual moderno, sem card tradicional */
 .custo-card {
     background: none;
@@ -285,11 +337,30 @@ html {
 }
 .custo-item {
     display: flex;
-    align-items: baseline;
-    font-size: 1.13rem;
-    padding: 0.3rem 0;
-    border: none;
-    background: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.7rem;
+    line-height: 1.5;
+    border-bottom: 1px solid #f0f1f6;
+    padding-bottom: 0.7rem;
+}
+.custo-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.custo-item.logistica-item .custo-label {
+    flex-shrink: 0; /* Impede que o label 'Logística:' encolha */
+    margin-right: 0.5em; /* Adiciona um pequeno espaço entre o label e o valor */
+}
+.custo-item.logistica-item .custo-value.logistica-inline {
+    display: flex; /* Reafirmar como flex container */
+    flex-wrap: nowrap; /* Impedir que filhos quebrem linha */
+    align-items: baseline; /* Alinhar filhos pela linha de base */
+    flex-grow: 1; /* Mantido - para seu papel como item flex em .custo-item */
+    min-width: 0; /* Mantido */
+    overflow: hidden; /* Mantido */
+    text-overflow: ellipsis; /* Mantido */
 }
 .custo-label {
     color: var(--accent);
@@ -337,7 +408,7 @@ html {
     flex-wrap: wrap;
 }
 .logistica-formula {
-    font-size: 0.83em !important;
+    font-size: 0.6em !important;
     color: #666;
     font-weight: 400;
     letter-spacing: -0.02em;
@@ -348,6 +419,27 @@ html {
     font-size: 1em;
     font-weight: 700;
     margin-left: 0.6em;
+}
+
+.logistica-texto-detalhado {
+    display: inline-block; /* Para ficar lado a lado com o valor final */
+    vertical-align: baseline; /* Para alinhar com o valor final */
+    font-size: 0.6em; /* Fonte BEM menor para a fórmula - Reduzido drasticamente */
+    /* letter-spacing: -0.05em; /* REMOVIDO TEMPORARIAMENTE PARA TESTE */
+    margin-right: 0.3em; /* Pequeno espaço antes do sinal de igual */
+    white-space: nowrap; /* Restaurado - Garante que o texto INTERNO deste span não quebre */
+    padding: 0; /* Garante que não haja padding adicionando largura */
+}
+
+.logistica-valor-final {
+    display: inline-block; /* Para ficar lado a lado com o texto detalhado */
+    vertical-align: baseline; /* Para alinhar com o texto detalhado */
+    font-size: 1em; /* Tamanho de fonte normal, relativo ao .custo-value pai */
+    font-weight: bold; /* Negrito, como os outros valores monetários */
+    background-color: transparent !important; /* Garante que não haja cor de fundo (remove destaque) */
+    color: inherit !important; /* Herda a cor do texto do pai (remove cor azul do destaque) */
+    padding: 0 !important; /* Remove qualquer padding que possa ter vindo de classes antigas */
+    white-space: nowrap; /* Restaurado - Garante que o texto INTERNO deste span não quebre */
 }
 @media (max-width: 600px) {
     .custo-lista.uma-coluna {
@@ -701,4 +793,53 @@ img, svg, canvas {
     font-size: 1.1em;
     vertical-align: middle;
     opacity: 0.7;
+}
+
+/* Global chart container styling for chart + table sections */
+.chart-container {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  box-sizing: border-box;
+}
+.chart-container canvas {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+.chart-container table {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: table !important;
+  table-layout: fixed;
+}
+.chart-container th,
+.chart-container td {
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid #dde2ec;
+}
+#turnoverChart + table {
+  width: 100% !important;
+  display: table !important;
+  table-layout: fixed;
+}
+@media (max-width: 700px) {
+  .chart-container table,
+  #turnoverChart + table {
+    display: block;
+    overflow-x: auto;
+    table-layout: auto;
+  }
+  .chart-container th,
+  .chart-container td {
+    min-width: 80px;
+    font-size: 0.93rem;
+    padding: 0.5rem 0.3rem;
+  }
 }
