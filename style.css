@@ -110,6 +110,8 @@ h2 {
     padding-left: 0.7rem;
     background: #f8f9fa;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
 }
 
 h3 {
@@ -249,6 +251,8 @@ th {
     vertical-align: middle;
     flex-shrink: 0;
     color: var(--accent);
+    margin-right: 0.5em;
+    flex-shrink: 0;
 }
 
 /* Smooth scrolling for anchor navigation */
@@ -815,7 +819,7 @@ img, svg, canvas {
 .chart-container table {
   width: 100% !important;
   max-width: 100% !important;
-  display: table !important;
+  display: table;
   table-layout: fixed;
 }
 .chart-container th,
@@ -826,8 +830,9 @@ img, svg, canvas {
 }
 #turnoverChart + table {
   width: 100% !important;
-  display: table !important;
+  display: table;
   table-layout: fixed;
+  margin-top: 2em; /* Aumenta a distância do gráfico acima */
 }
 @media (max-width: 700px) {
   .chart-container table,
