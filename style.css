@@ -589,6 +589,88 @@ html {
     }
 }
 
+/* === RESPONSIVIDADE ADICIONAL === */
+@media (max-width: 900px) {
+  main {
+    max-width: 100vw;
+    padding: 1.1rem 0.5rem 2rem 0.5rem;
+  }
+  .roi-blocos, .roi-invest-benef {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .roi-bloco, .roi-invest-card, .roi-benef-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 700px) {
+  section, .kpi-section {
+    padding: 0.7rem 0.3rem;
+    margin: 1rem 0;
+  }
+  .roi-formula-box {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0.3rem;
+  }
+}
+@media (max-width: 600px) {
+  table, .roi-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  th, td, .roi-table th, .roi-table td {
+    min-width: 110px;
+    box-sizing: border-box;
+    word-break: break-word;
+    padding: 0.5rem 0.3rem;
+    font-size: 0.94rem;
+  }
+  .roi-cenarios-grafico, .roi-breakeven-center {
+    padding: 0.3rem;
+  }
+  img, svg, canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+  .custo-lista.uma-coluna, .custo-total, .roi-formula-box, .roi-invest-card, .roi-benef-card {
+    padding-left: 0.4rem !important;
+    padding-right: 0.4rem !important;
+  }
+}
+@media (max-width: 430px) {
+  h1, .main-header h1 {
+    font-size: 1rem !important;
+  }
+  h2 {
+    font-size: 0.93rem !important;
+  }
+  .roi-formula-main {
+    font-size: 0.93em !important;
+  }
+}
+/* Tabelas responsivas */
+table, .roi-table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+th, td, .roi-table th, .roi-table td {
+  word-break: break-word;
+}
+/* Garantir que imagens e gráficos nunca estourem o container */
+img, svg, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* === LINKS RELATÓRIO FINAL - ESTILIZAÇÃO DESTACADA === */
 .relatorio-link {
     color: var(--secondary);

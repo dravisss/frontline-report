@@ -134,3 +134,25 @@ new Chart(ctx4, {
         }
     }
 });
+
+// Garante que todos os gráficos nesta página sejam responsivos
+function makeAllChartsResponsive() {
+  if (window.custosIndiretosChart) {
+    window.custosIndiretosChart.options.responsive = true;
+    window.custosIndiretosChart.resize();
+  }
+  if (window.custosDiretosEmpilhadoChart) {
+    window.custosDiretosEmpilhadoChart.options.responsive = true;
+    window.custosDiretosEmpilhadoChart.resize();
+  }
+  if (window.desligamentosEmpilhadoChart) {
+    window.desligamentosEmpilhadoChart.options.responsive = true;
+    window.desligamentosEmpilhadoChart.resize();
+  }
+  if (window.custosDiretosDetalheChart) {
+    window.custosDiretosDetalheChart.options.responsive = true;
+    window.custosDiretosDetalheChart.resize();
+  }
+}
+window.addEventListener('resize', makeAllChartsResponsive);
+window.addEventListener('DOMContentLoaded', makeAllChartsResponsive);

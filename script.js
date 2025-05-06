@@ -2,7 +2,7 @@
 const turnoverCanvas = document.getElementById('turnoverChart');
 if (turnoverCanvas) {
     const ctx = turnoverCanvas.getContext('2d');
-    new Chart(ctx, {
+    window.turnoverChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: ['FY24', 'FY25', 'FY26', 'FY27', 'FY28'],
@@ -95,7 +95,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const percentuaisAjustados = [0, 3.85, 5, 7, 10];
     const economiaAjustada = percentuaisAjustados.map(p => custoTurnover * (p / 100));
     const roiAjustado = economiaAjustada.map(e => ((e - investimento) / investimento) * 100);
-    new Chart(ctx, {
+    window.roiChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: percentuaisAjustados.map(p => p + '%'),
@@ -113,7 +113,7 @@ window.addEventListener('DOMContentLoaded', function() {
             }]
         },
         options: {
-            responsive: false,
+            responsive: true,
             plugins: {
                 legend: {
                     display: false
@@ -181,3 +181,18 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Ajusta todos os gráficos para serem responsivos
+function makeChartsResponsive() {
+  if (window.turnoverChart) {
+    window.turnoverChart.options.responsive = true;
+    window.turnoverChart.resize();
+  }
+  if (window.roiChart) {
+    window.roiChart.options.responsive = true;
+    window.roiChart.resize();
+  }
+  // Adicione outros gráficos conforme necessário
+}
+window.addEventListener('resize', makeChartsResponsive);
+window.addEventListener('DOMContentLoaded', makeChartsResponsive);
